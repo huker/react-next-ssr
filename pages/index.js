@@ -1,7 +1,7 @@
 /**
  * Created by huk on 2018/1/22.
  */
-import Index from '../index';
+import React from 'react';
 import { Base } from '../components/index';
 import { bindActionCreators } from 'redux';
 import { initStore, menuChange, } from '../redux/store';
@@ -15,11 +15,15 @@ class IndexPage extends React.Component {
 
     render() {
         return (
-            <Index>
-                <Base>
-                    <p>This is the about page</p>
-                </Base>
-            </Index>
+            <Base>
+                <p>This is the home page</p>
+                <p>This is the home page</p>
+                <p>This is the home page</p>
+                <p>This is the home page</p>
+                <p>This is the home page</p>
+                <p>This is the home page</p>
+                <p>This is the home page</p>
+            </Base>
         )
     }
 }

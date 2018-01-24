@@ -1,12 +1,15 @@
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 import { Icon, Layout, Menu } from 'antd';
 const SubMenu = Menu.SubMenu;
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import stylesheet from 'styles/base.less';
 
 export default connect(state => state)(({ current, menuChange }) => {
 
     return (
         <Layout>
+            <style dangerouslySetInnerHTML={{ __html: stylesheet }}/>
             <div className="header">
                 <Link href="/">
                     <div className="logo"/>
@@ -30,32 +33,24 @@ export default connect(state => state)(({ current, menuChange }) => {
                              title={<div><span style={{ marginLeft: '10px' }}>产品及服务</span><Icon
                                  type="caret-down"/></div>}>
                         <Menu.Item key="ImagePlatform">
-                            <Link href="/ImagePlatform">
+                            <Link href="/Detail">
                                 <a>pro1</a>
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="DataPlatform">
-                            <Link href="/DataPlatform">
-                                <a>Pro2</a>
-                            </Link>
+                            <a>Pro2</a>
                         </Menu.Item>
                         <Menu.Item key="Apps">
-                            <Link href="/Apps">
-                                <a>pro2</a>
-                            </Link>
+                            <a>pro2</a>
                         </Menu.Item>
                     </SubMenu>
                     <SubMenu key="/case" title={<div><span style={{ marginLeft: '10px' }}>成功案例</span><Icon
                         type="caret-down"/></div>}>
                         <Menu.Item key="Hospital">
-                            <Link href="/Hospital">
-                                <a>case1</a>
-                            </Link>
+                            <a>case1</a>
                         </Menu.Item>
                         <Menu.Item key="MeinianHealth">
-                            <Link href="/MeinianHealth">
-                                <a>case2</a>
-                            </Link>
+                            <a>case2</a>
                         </Menu.Item>
                     </SubMenu>
                     <Menu.Item key="health">
@@ -64,42 +59,19 @@ export default connect(state => state)(({ current, menuChange }) => {
                     <SubMenu key="/about" title={<div><span style={{ marginLeft: '10px' }}>关于我们</span><Icon
                         type="caret-down"/></div>}>
                         <Menu.Item key="Company">
-                            <Link href="/Company">
+                            <Link href="/Detail">
                                 <a>公司简介</a>
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="Contact">
-                            <Link href="/Contact">
-                                <a>联系我们</a>
-                            </Link>
+                            <a>联系我们</a>
                         </Menu.Item>
                         <Menu.Item key="Join">
-                            <Link href="/Join">
-                                <a>加入我们</a>
-                            </Link>
+                            <a>加入我们</a>
                         </Menu.Item>
                     </SubMenu>
                 </Menu>
             </div>
-            <style>
-                {`
-            .logo {
-    width: 178px;
-    height: 40px;
-    background: url('../../static/logo.svg') no-repeat;
-    border-radius: 6px;
-    float: left;
-    margin-top: 12px;
-    &:hover {
-      cursor: pointer;
-    }
-    .header {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  }
-            `}
-            </style>
         </Layout>
     )
 })
