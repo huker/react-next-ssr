@@ -1,0 +1,39 @@
+{
+  "name": "react-next-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "serve": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huker/react-next-ssr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huker/react-next-ssr/issues"
+  },
+  "homepage": "https://github.com/huker/react-next-ssr#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "isomorphic-unfetch": "^2.0.0",
+    "antd": "^3.0.2",
+    "babel-plugin-import": "^1.1.1",
+    "next": "^4.2.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "next-redux-wrapper": "^1.0.0",
+    "redux-devtools-extension": "^2.13.2",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-decorators-legacy": "^1.3.4"
+  }
+}
