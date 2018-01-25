@@ -1,7 +1,9 @@
 /**
  * Created by huk on 2018/1/22.
  */
-import Head from 'next/head'
+import Head from 'next/head';
+import stylesheet from './styles/theme.less';
+
 export default ({ children }) =>
     <div>
         <Head>
@@ -18,11 +20,9 @@ export default ({ children }) =>
             <meta name="robots"
                   content="noindex, nofollow, noodp, noarchive, nosnippet, noimageindex, noydir, nocache"/>
             <meta name="referrer" content="origin"/>
-            <link rel='stylesheet' href='https://unpkg.com/antd@3/dist/antd.min.css'/>
+            {/*<link rel='stylesheet' href='https://unpkg.com/antd@3/dist/antd.min.css'/>*/}
+            {/*<link rel='stylesheet' href='/static/styles.css'/>/*/}
         </Head>
-        <style jsx global>{`
-      body {
-      }
-    `}</style>
+        <style dangerouslySetInnerHTML={{ __html: stylesheet }}/>
         {children}
     </div>

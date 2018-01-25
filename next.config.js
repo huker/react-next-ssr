@@ -1,6 +1,7 @@
 "use strict";
 const path = require('path');
 const glob = require('glob');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     webpack: (config, { dev }) => {
@@ -33,6 +34,11 @@ module.exports = {
                 ]
             }
         )
+
+        config.plugins.push(
+            new ExtractTextPlugin(__dirname + '/static/styles.css')
+        );
+
         return config
     }
 }
