@@ -17,11 +17,7 @@ export default ({ children }) =>
             <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1"/>
             <meta name="viewport"
                   content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-            <meta name="robots"
-                  content="noindex, nofollow, noodp, noarchive, nosnippet, noimageindex, noydir, nocache"/>
             <meta name="referrer" content="origin"/>
-            {/*<link rel='stylesheet' href='https://unpkg.com/antd@3/dist/antd.min.css'/>*/}
-            {/*<link rel='stylesheet' href='/static/styles.css'/>/*/}
         </Head>
         <style dangerouslySetInnerHTML={{ __html: stylesheet }}/>
         {children}

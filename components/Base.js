@@ -1,9 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { HeaderLayout, Footer } from './index';
 import Index from '../index';
 import { bindActionCreators } from 'redux'
-import { initStore, menuChange } from '../redux/store'
-import withRedux from 'next-redux-wrapper'
+import { menuChange } from '../redux/store'
 import { Layout } from 'antd';
 const { Header, Content } = Layout;
 
@@ -37,6 +37,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-Base = withRedux(initStore, (state) => ({ current: state.current }), mapDispatchToProps)(Base);
+Base = connect((state) => ({ current: state.current }), mapDispatchToProps)(Base);
 
 export default Base

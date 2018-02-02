@@ -2,36 +2,31 @@
  * Created by huk on 2018/1/22.
  */
 import React from 'react';
-import { Base } from '../components/index';
-import { bindActionCreators } from 'redux';
-import { initStore, menuChange, } from '../redux/store';
+import { IndexPage } from '../components/index';
+import { initStore } from '../redux/store';
 import withRedux from 'next-redux-wrapper';
 
+//首页路由
+class IndexRoute extends React.Component {
 
-class IndexPage extends React.Component {
-    static getInitialProps({ store, isServer }) {
-        return
+    static async getInitialProps({ store, isServer }) {
+    }
+
+    constructor(props) {
+        super(props)
     }
 
     render() {
         return (
-            <Base>
-                <p>This is the home page</p>
-                <p>This is the home page</p>
-                <p>This is the home page</p>
-                <p>This is the home page</p>
-                <p>This is the home page</p>
-                <p>This is the home page</p>
-                <p>This is the home page</p>
-            </Base>
+            <div>
+                <IndexPage/>
+            </div>
         )
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        menuChange: bindActionCreators(menuChange, dispatch),
-    }
+    return {}
 };
 
-export default withRedux(initStore, null, mapDispatchToProps)(IndexPage)
+export default withRedux(initStore, null, mapDispatchToProps)(IndexRoute)
