@@ -5,27 +5,45 @@ import Index from '../index';
 import { bindActionCreators } from 'redux'
 import { menuChange } from '../redux/store'
 import { Layout } from 'antd';
+import Router from 'next/router';
 const { Header, Content } = Layout;
 
 class Base extends React.Component {
+
+    menuCurrent;
+
     constructor(props) {
         super(props)
+
+    }
+
+    componentWillMount() {
+        this.menuCurrent = Router && Router.router && Router.router.route;
+        if (this.menuCurrent && this.menuCurrent === '/') {
+            this.menuCurrent = '/Home';
+        }
     }
 
     render() {
         return (
             <Index>
-                <Layout>
-                    <Header>
-                        <HeaderLayout menuChange={this.props.menuChange}/>
-                    </Header>
-                    <Content>
-                        <div>
-                            {this.props.children}
-                        </div>
-                    </Content>
-                    <Footer />
-                </Layout>
+                {
+                    this.menuCurrent &&
+                    <Layout>
+                        <Header>
+
+                            <HeaderLayout
+                                menuCurrent={this.menuCurrent}/>
+                        </Header>
+                        <Content>
+                            <div>
+                                {this.props.children}
+                            </div>
+                        </Content>
+                        <Footer />
+                    </Layout>
+
+                }
             </Index>
         )
     }
@@ -37,6 +55,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-Base = connect((state) => ({ current: state.current }), mapDispatchToProps)(Base);
+Base = connect(null, mapDispatchToProps)(Base);
 
 export default Base
